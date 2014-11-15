@@ -48,17 +48,19 @@ class UserController extends BaseController
         {
             $data = $usr->toArray();
             $welcome_msg = "Congratulations {$usr->first_name}. You have been registered successfully. Please login to continue";
+            //Simple email demo. Email config is located in app/config/email.php
+            //This will simply log email to laravel log file
             Mail::send('emails.welcome', $data, function($message) use($usr)
             {
                 $message->to($usr->email, $usr->first_name .' '. $usr->last_name)
-                ->subject('Welcome to Testla!')
-                ->from('testla@localhost.com');
+                ->subject('Welcome to Larablade!')
+                ->from('testla@larablade.com');
             });
-            return Redirect::to('users.login')->withMessage($welcome_msg);
+            return Redirect::to('login')->withMessage($welcome_msg);
         }
         else
         {
-            return Redirect::to('users.register')->withMessage("Sorry, we were not able to register you.");
+            return Redirect::to('register')->withError("Sorry, we were not able to register you.");
         }
     }
 
@@ -72,14 +74,14 @@ class UserController extends BaseController
         }
         else
         {
-            return Redirect::to('users.login')->withMessage('Incorrect username or passowrd');
+            return Redirect::to('login')->withError('Incorrect username or passowrd');
         }
     }
     
     public function logout()
     {
         Auth::logout();
-        return Redirect::to('users.login')->withMessage('You have been logged out successfully.');
+        return Redirect::to('login')->withMessage('You have been logged out successfully.');
     }
 
     public function login()
