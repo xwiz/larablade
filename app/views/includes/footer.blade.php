@@ -1,0 +1,1 @@
+!&copy; Uncopyright 2014 <a href="https://github.com/xwiz/larablade">Laravel Blade Demo</a> by Opata Chibueze
