@@ -10,7 +10,7 @@
 		@include('includes.navbar')
 	</header>
 
-	<div id="main" class="col-md-12" style="margin-top: 5%;">
+	<div id="main" class="col-md-12" style="margin-top: 60px;">
 
 			@yield('content')
 	</div>

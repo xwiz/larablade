@@ -21,8 +21,8 @@
 			<li class="divider-vertical"></li>
 			<li class="dropdown" id="menu_login">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In <b class="caret"></b></a>
-				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
-                    {{ Form::open(array('url'=>'/login')) }}
+				<div class="dropdown-menu" style="padding: 15px; padding-bottom: 15px; margin-left: -145px;">
+                    {{ Form::open(array('url'=>'/authenticate')) }}
                     <input id="email" placeholder="email" style="margin-bottom: 15px;" type="text" name="email" size="30" maxlength="80" />
                     <input id="password" placeholder="password" style="margin-bottom: 15px;" type="password" name="password" size="30" maxlength="64" />
                     <div id="remember-me">
