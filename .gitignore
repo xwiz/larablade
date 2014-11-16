@@ -1,6 +1,8 @@
 /bootstrap/compiled.php
 /app/storage/logs/laravel.log
 /app/config/local/database.php
+/app/config/database.php
+/app/config/services.php
 /vendor
 composer.phar
 composer.lock
