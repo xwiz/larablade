@@ -10,6 +10,8 @@
 
 <p>I AM GROOOOT.</p>
 
+<p><a href="https://github.com/xwiz/larablade">Git Repo</a></p>
+
 </div>
 
 @stop

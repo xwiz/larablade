@@ -1,3 +1,46 @@
+## Laravel + Boostrap + Blade Templating
+This is a Laravel 4.2 web app that demonstrates
+
+1. Configuring your environment
+2. Basic user authentication
+3. Using Laravel blade templating
+4. Creating simple forms with laravel
+5. Sending mails with Laravel
+6. Flashing messages to session and displaying them to user
+
+### Configuring your environment
+If you're developing with laravel homestead or forge this step is mostly irrelevant. If you're not, however, the three most important files you usually need to modify are
+- start/global.php
+- bootstrap/start.php
+- app/config/database.php or app/config/local/database.php
+
+Ensure that your database is configured properly and that your `bootstrap/start.php` has your hostname properly included. You can run
+
+> hostname
+
+on your PC to find out your hostname.
+
+### Basic user authentication
+*See* [Authenticating users](http://laravel.com/docs/4.2/security#authenticating-users)
+
+Laravel authentications are pretty straight forward but ensure that your users's password field length is 64 or be prepared to face the wrath of Sango.
+
+### Using Laravel Blade Templating
+*See* [Laravel Blade Templating](http://laravel.com/docs/4.2/templates#blade-templating)
+
+Laravel offers a powerful templating engine called Blade which allows you to easily build themes/control view layout for your site. The demo shows how you can have a unified header, navbar, footer, and sidebar as well as dynamially load 'Page Title' for your pages.
+
+### Creating simple forms with Laravel
+The [authenticate](https://github.com/xwiz/larablade/blob/master/app/controllers/UserController.php#L67) and [registerUser](https://github.com/xwiz/larablade/blob/master/app/controllers/UserController.php#L38) methods in UserController show how to process input data from the login and register form views.
+
+### Sending mail with Laravel
+The mail function enables you to easily send mail with Laravel as well as to configure how your mails are sent. In this demo, when a user signs up, we send the user an email along with a custom message. Note the `use($usr)` on [line 53](https://github.com/xwiz/larablade/blob/master/app/controllers/UserController.php#L53). This enables us to use $usr in the scope of the `Mail::send` function
+
+### Flashing messages to session
+There are two major ways to send your data to views in laravel. Using the Session::flash method which sets a temporary data to the session or using `View::make('some.view')->withData($data)` which sends some `$data` directly to your specified view file.
+
+It is important to note that `Redirect::to('some/view')->withData($data)` works in a different way from `View::make('some.view')->withData($data)`. The first puts the data in the session while the second passes the `$data` directly as a variable to the view file.
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
